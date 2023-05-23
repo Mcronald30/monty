@@ -3,7 +3,7 @@
 /**
  * m_push - add node to the stack
  * @h: stack head
- * @line_number: line_number
+ * @line_num: line_number
  * Return: no return
 */
 void m_push(stack_t **h, unsigned int line_num)
