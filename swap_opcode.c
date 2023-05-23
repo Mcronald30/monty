@@ -8,7 +8,7 @@
 */
 void m_swap(stack_t **h, unsigned int line_num)
 {
-	int count = 0, aux;
+	int count = 0, data;
 
 	while (h)
 	{
@@ -24,7 +24,7 @@ void m_swap(stack_t **h, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	aux = h->n;
+	data = h->n;
 	h->n = h->next->n;
-	h->next->n = aux;
+	h->next->n = data;
 }
