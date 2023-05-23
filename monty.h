@@ -13,16 +13,16 @@
  * struct bus_s - variables -args, file, line content
  * @arg: value
  * @file: pointer to monty file
- * @content: line content
- * @lifi: flag change stack <-> queue
+ * @cont: line content
+ * @ro: flag change stack <-> queue
  * Description: carries values through the program
  */
 typedef struct bus_s
 {
 	char *arg;
 	FILE *file;
-	char *content;
-	int Rif;
+	char *cont;
+	int ro;
 }  bus_t;
 extern bus_t bus;
 
@@ -58,11 +58,11 @@ typedef struct instruction_s
 
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
-char  *clean_line(char *content);
+char  *clean_line(char *cont);
 void m_push(stack_t **h, unsigned int line_num);
 void m_pall(stack_t **h, unsigned int line_num);
 void m_pint(stack_t **h, unsigned int line_num);
-int execute(char *content, stack_t **h, unsigned int line_num, FILE *file);
+int execute(char *cont, stack_t **h, unsigned int line_num, FILE *file);
 void free_stack(stack_t *h);
 void m_pop(stack_t **h, unsigned int line_num);
 void m_swap(stack_t **h, unsigned int line_num);
@@ -76,8 +76,9 @@ void m_pchar(stack_t **h, unsigned int line_num);
 void m_pstr(stack_t **h, unsigned int line_num);
 void m_rotl(stack_t **h, unsigned int line_num);
 void m_rotr(stack_t **h, unsigned int line_num);
-void addnode(stack_t **h, int n);
-void addqueue(stack_t **h, int n);
+void add_node_end(stack_t **h, int n);
+void add_node_beginning(stack_t **h, int n);
 void m_queue(stack_t **h, unsigned int line_num);
 void m_stack(stack_t **h, unsigned int line_num);
+
 #endif
