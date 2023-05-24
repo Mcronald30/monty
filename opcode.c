@@ -8,15 +8,15 @@
 */
 void m_push(stack_t **h, unsigned int line_num)
 {
-	int i, j = 0, flag = 0;
+	int node, i = 0, flag = 0;
 
 	if (bus.arg)
 	{
 		if (bus.arg[0] == '-')
-			j++;
-		for (; bus.arg[j] != '\0'; j++)
+			i++;
+		for (; bus.arg[i] != '\0'; i++)
 		{
-			if (bus.arg[j] > '9' || bus.arg[j] < '0')
+			if (bus.arg[i] > '9' || bus.arg[i] < '0')
 				flag = 1;
 		}
 		if (flag == 1)
@@ -37,9 +37,9 @@ void m_push(stack_t **h, unsigned int line_num)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	n = atoi(bus.arg);
+	node = atoi(bus.arg);
 	if (bus.ro == 0)
-		add_node_end(h, n);
+		add_node_end(h, node);
 	else
-		add_node_beginning(h, n);
+		add_node_beginning(h, node);
 }

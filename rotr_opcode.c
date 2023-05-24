@@ -5,23 +5,25 @@
  * @line_num: line_number
  * Return: null
  */
-void m_rotr(stack_t **h, unsigned int line_num)
+void m_rotr(stack_t **h, __attribute__((unused)) unsigned int line_num)
 {
+	stack_t *current;
+
+	current = *h;
+
 	if (*h == NULL || (*h)->next == NULL)
 	{
 		return;
 	}
 
-	stack_t *current = *h;
-	stack_t *prev = NULL;
-
-	while (current->next != NULL)
+	while (current->next)
 	{
-		prev = current;
 		current = current->next;
 	}
 
-	prev->next = NULL;
 	current->next = *h;
-	*h = current;
+	current->prev->next = NULL;
+	current->prev = NULL;
+	(*h)->prev = current;
+	(*h) = current;
 }

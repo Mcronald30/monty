@@ -9,15 +9,18 @@
 */
 void m_pchar(stack_t **h, unsigned int line_num)
 {
-	if (!h)
+	stack_t *head;
+
+	head = *h;
+	if (!head)
 	{
-		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+		fprintf(stderr, "L%d: can't pchar, stack empty\n", line_num);
 		fclose(bus.file);
 		free(bus.cont);
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	if (h->n > 127 || h->n < 0)
+	if (head->n > 127 || head->n < 0)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_num);
 		fclose(bus.file);
@@ -25,5 +28,5 @@ void m_pchar(stack_t **h, unsigned int line_num)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	printf("%c\n", h->n);
+	printf("%c\n", head->n);
 }

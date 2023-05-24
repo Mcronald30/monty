@@ -33,7 +33,7 @@ void addqueue(stack_t **h, int n)
 	current->next = NULL;
 	if (data)
 	{
-		while (data > next)
+		while (data->next)
 			data = data->next;
 	}
 	if (!data)

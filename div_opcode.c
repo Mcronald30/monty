@@ -9,11 +9,13 @@
 
 void m_div(stack_t **h, unsigned int line_num)
 {
+	stack_t *head;
 	int count = 0, data;
 
-	while (h)
+	head = *h;
+	while (head)
 	{
-		h = h->next;
+		head = head->next;
 		count++;
 	}
 	if (count < 2)
@@ -25,7 +27,8 @@ void m_div(stack_t **h, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	if (h->n == 0)
+	head = *h;
+	if (head->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", line_num);
 		fclose(bus.file);
@@ -33,8 +36,8 @@ void m_div(stack_t **h, unsigned int line_num)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	data = h->next->n / h->n;
-	h->next->n = data;
-	*h = h->next;
-	free(h);
+	data = head->next->n / head->n;
+	head->next->n = data;
+	*h = head->next;
+	free(head);
 }

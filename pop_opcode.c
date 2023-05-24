@@ -8,6 +8,9 @@
 */
 void m_pop(stack_t **h, unsigned int line_num)
 {
+	stack_t *head;
+
+	head = *h;
 	if (*h == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_num);
@@ -16,6 +19,6 @@ void m_pop(stack_t **h, unsigned int line_num)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	*h = h->next;
-	free(h);
+	*h = head->next;
+	free(head);
 }

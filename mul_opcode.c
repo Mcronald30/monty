@@ -8,11 +8,13 @@
 */
 void m_mul(stack_t **h, unsigned int line_num)
 {
+	stack_t *head;
 	int count = 0, data;
 
-	while (h)
+	head = *h;
+	while (head)
 	{
-		h = h->next;
+		head = head->next;
 		count++;
 	}
 	if (count < 2)
@@ -24,8 +26,8 @@ void m_mul(stack_t **h, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	data = h->next->n * h->n;
-	h->next->n = data;
-	*h = h->next;
-	free(h);
+	data = head->next->n * head->n;
+	head->next->n = data;
+	*h = head->next;
+	free(head);
 }

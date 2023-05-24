@@ -8,11 +8,13 @@
  */
 void m_sub(stack_t **h, unsigned int line_num)
 {
-	int sub, data;
+	stack_t *data;
+	int sub, node;
 
-	for (data = 0; h != NULL; data++)
-		h = h->next;
-	if (data < 2)
+	data = *h;
+	for (node = 0; data != NULL; node++)
+		data = data->next;
+	if (node < 2)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_num);
 		fclose(bus.file);
@@ -21,8 +23,8 @@ void m_sub(stack_t **h, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	sub = h->next->n - h->n;
-	h->next->n = sub;
-	*h = h->next;
-	free(h);
+	sub = data->next->n - data->n;
+	data->next->n = sub;
+	*h = data->next;
+	free(data);
 }

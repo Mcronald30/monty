@@ -8,20 +8,22 @@
  */
 void m_rotl(stack_t **h, unsigned int line_num)
 {
+	stack_t *last = *h, *secondlast;
+	(void)line_num;
+
 	if (*h == NULL || (*h)->next == NULL)
 	{
 		return;
 	}
 
-	stack_t *last = *h;
-	stack_t *secondLast = NULL;
-
+	secondlast = (*h)->next;
+	secondlast->prev = NULL;
 	while (last->next != NULL)
 	{
-		secondLast = last;
 		last = last->next;
 	}
-	secondLast->next = NULL;
 	last->next = *h;
-	*h = last;
+	(*h)->next = NULL;
+	(*h)->prev = last;
+	(*h) = secondlast;
 }

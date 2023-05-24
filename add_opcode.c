@@ -8,13 +8,14 @@
 */
 void m_add(stack_t **h, unsigned int line_num)
 {
-	int count = 0;
+	int count = 0, data;
 
-	stack_t *data;
+	stack_t *head;
 
-	while (h)
+	head = *h;
+	while (head)
 	{
-		h = h->next;
+		head = head->next;
 		count++;
 	}
 	if (count < 2)
@@ -26,8 +27,9 @@ void m_add(stack_t **h, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	data = h->n + h->next->n;
-	h->next->n = data;
-	*h = h->next;
-	free(h);
+	head = *h;
+	data = head->n + head->next->n;
+	head->next->n = data;
+	*h = head->next;
+	free(head);
 }

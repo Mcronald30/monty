@@ -9,14 +9,18 @@
 */
 void m_pstr(stack_t **h, unsigned int line_num)
 {
-	while (h)
+	stack_t *head;
+	(void)line_num;
+
+	head = *h;
+	while (head)
 	{
-		if (h->n > 127 || h->n <= 0)
+		if (head->n > 127 || head->n <= 0)
 		{
 			break;
 		}
-		printf("%c", h->n);
-		h = h->next;
+		printf("%c", head->n);
+		head = head->next;
 	}
 	printf("\n");
 }
