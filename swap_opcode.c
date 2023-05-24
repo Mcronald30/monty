@@ -8,7 +8,9 @@
 */
 void m_swap(stack_t **h, unsigned int line_num)
 {
-	int count = 0, data;
+	int count = 0
+
+	stack_t *data;
 
 	while (h)
 	{
