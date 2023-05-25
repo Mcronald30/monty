@@ -1,15 +1,15 @@
 #include "monty.h"
 
 /**
- * m_sub- sustration
+ * sub- sustration
  * @h: stack head
  * @line_num: line_number
  * Return: null
  */
-void m_sub(stack_t **h, unsigned int line_num)
+void sub(stack_t **h, unsigned int line_num)
 {
 	stack_t *data;
-	int sub, node;
+	int mus, node;
 
 	data = *h;
 	for (node = 0; data != NULL; node++)
@@ -23,8 +23,8 @@ void m_sub(stack_t **h, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	sub = data->next->n - data->n;
-	data->next->n = sub;
+	mus = data->next->n - data->n;
+	data->next->n = mus;
 	*h = data->next;
 	free(data);
 }

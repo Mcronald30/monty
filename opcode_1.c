@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * m_pall - prints the stack
+ * pall - prints the stack
  * @h: stack head
  * @line_num: line number
  * Return: no return
 */
-void m_pall(stack_t **h, unsigned int line_num)
+void pall(stack_t **h, unsigned int line_num)
 {
 	stack_t *head;
 	(void)line_num;
