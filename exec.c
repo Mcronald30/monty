@@ -28,22 +28,22 @@ int execute(char *cont, stack_t **stack, unsigned int line_num, FILE *file)
 				{"stack", m_stack},
 				{NULL, NULL}
 				};
-	unsigned int i = 0;
+	unsigned int count = 0;
 	char *op;
 
 	op = strtok(cont, " \n\t");
 	if (op && op[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (opst[i].opcode && op)
+	while (opst[count].opcode && op)
 	{
-		if (strcmp(op, opst[i].opcode) == 0)
-		{	opst[i].f(stack, line_num);
+		if (strcmp(op, opst[count].opcode) == 0)
+		{	opst[count].f(stack, line_num);
 			return (0);
 		}
-		i++;
+		count++;
 	}
-	if (op && opst[i].opcode == NULL)
+	if (op && opst[count].opcode == NULL)
 	{ fprintf(stderr, "L%d: unknown instruction %s\n", line_num, op);
 		fclose(file);
 		free(cont);

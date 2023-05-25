@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * queue - prints the top
+ * m_queue - prints the top
  * @h: stack head
  * @line_num: line_number
  * Return: null
 */
-void queue(stack_t **h, unsigned int line_num)
+void m_queue(stack_t **h, unsigned int line_num)
 {
 	(void)h;
 	(void)line_num;

@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * mul - multiplies the top two elements of the stack.
+ * m_mul - multiplies the top two elements of the stack.
  * @h: stack head
  * @line_num: line_number
  * Return: null
 */
-void mul(stack_t **h, unsigned int line_num)
+void m_mul(stack_t **h, unsigned int line_num)
 {
 	stack_t *head;
 	int count = 0, data;

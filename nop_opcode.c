@@ -6,7 +6,7 @@
  * @line_num: line_number
  * Return: null
  */
-void nop(stack_t **h, unsigned int line_num)
+void m_nop(stack_t **h, unsigned int line_num)
 {
 	(void) line_num;
 	(void) h;

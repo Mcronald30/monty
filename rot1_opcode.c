@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * rotl- rotates the stack to the top
+ * m_rotl- rotates the stack to the top
  * @h: stack head
  * @line_num: line_number
  * Return: null
  */
-void rotl(stack_t **h, unsigned int line_num)
+void m_rotl(stack_t **h, unsigned int line_num)
 {
 	stack_t *last = *h, *secondlast;
 	(void)line_num;

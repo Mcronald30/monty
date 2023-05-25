@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * sub- sustration
+ * m_sub - sustration
  * @h: stack head
  * @line_num: line_number
  * Return: null
  */
-void sub(stack_t **h, unsigned int line_num)
+void m_sub(stack_t **h, unsigned int line_num)
 {
 	stack_t *data;
 	int mus, node;

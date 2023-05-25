@@ -1,19 +1,14 @@
 #include "monty.h"
 
 /**
-* free_stack - frees a doubly linked list
-* @h: head of the stack
+ * m_stack - prints the top
+ * @h: stack head
+ * @line_num: line_number
+ * Return: null
 */
-void free_stack(stack_t *h)
+void m_stack(stack_t **h, unsigned int line_num)
 {
-	stack_t *data;
-
-	data = h;
-
-	while (h)
-	{
-		data = h->next;
-		free(h);
-		h = data;
-	}
+	(void)h;
+	(void)line_num;
+	bus.ro = 0;
 }
