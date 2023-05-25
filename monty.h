@@ -76,8 +76,8 @@ void m_pchar(stack_t **h, unsigned int line_num);
 void m_pstr(stack_t **h, unsigned int line_num);
 void m_rotl(stack_t **h, unsigned int line_num);
 void m_rotr(stack_t **h, __attribute__((unused)) unsigned int line_num);
-void add_node_end(stack_t **h, int n);
-void add_node_beginning(stack_t **h, int n);
+void add_node(stack_t **h, int n);
+void add_queue(stack_t **h, int n);
 void m_queue(stack_t **h, unsigned int line_num);
 void m_stack(stack_t **h, unsigned int line_num);
 

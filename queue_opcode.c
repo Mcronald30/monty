@@ -19,7 +19,7 @@ void m_queue(stack_t **h, unsigned int line_num)
  * @h: head of the stack
  * Return: null
 */
-void addqueue(stack_t **h, int n)
+void add_queue(stack_t **h, int n)
 {
 	stack_t *current, *data;
 
