@@ -8,7 +8,7 @@
 */
 void m_push(stack_t **h, unsigned int line_num)
 {
-	int node, i = 0, flag = 0;
+	int n, i = 0, flag = 0;
 
 	if (bus.arg)
 	{
@@ -37,9 +37,9 @@ void m_push(stack_t **h, unsigned int line_num)
 		free_stack(*h);
 		exit(EXIT_FAILURE);
 	}
-	node = atoi(bus.arg);
+	n = atoi(bus.arg);
 	if (bus.ro == 0)
-		add_node_end(h, node);
+		add_node(h, n);
 	else
-		add_node_beginning(h, node);
+		add_queue(h, n);
 }
