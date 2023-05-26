@@ -5,7 +5,7 @@
  * @h: stack head
  * @line_num: line_number
  * Return: null
-*/
+ */
 void m_swap(stack_t **h, unsigned int line_num)
 {
 	stack_t *head;
